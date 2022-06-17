@@ -154,6 +154,9 @@ function buildRecordData({ data, dataDefinition, game }) {
             ? {
                 亲: true,
                 牌山: itemPayload.paishan,
+                場: '東南西北'[itemPayload.chang],
+                局: itemPayload.ju + 1,
+                本場: itemPayload.ben,
               }
             : {}),
           手牌: itemPayload[`tiles${seat}`],
