@@ -212,6 +212,8 @@ function buildRecordData({ data, dataDefinition, game }) {
             _.flatten(x.fans.map((x) => Array(x.val).fill(x.id))),
             numDiscarded / numPlayers + 1,
           ];
+          curRound[x.seat].最終手牌 = x.hand;
+          curRound[x.seat].和牌 = x.hu_tile;
           if (!x.zimo && curRound[x.seat].和[0] < Math.max(0, x.point_rong - 1500)) {
             // 一炮多响 + 包牌
             console.log(itemPayload, game.uuid);
